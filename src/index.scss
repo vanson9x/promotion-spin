@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(864deg);
+  }
+}
+
+div.App {
+  div.container {
+    margin: 200px auto 0;
+    width: 200px;
+    height: 200px;
+    border: solid 1px black;
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+
+    & > div[class*="sec"] {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      background-color: transparent;
+      left: 0;
+      top: 0;
+
+      div.p-relative {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        top: 0;
+        left: 0;
+
+        div.content {
+          content: "";
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+
+      &.sec-0 {
+        z-index: 1;
+        transform: rotate(45deg);
+
+        div.content {
+          background-color: red;
+        }
+      }
+
+      &.sec-1 {
+        z-index: 2;
+        transform: rotate(72deg + 45deg);
+
+        div.content {
+          background-color: yellow;
+        }
+      }
+
+      &.sec-2 {
+        z-index: 3;
+        transform: rotate(144deg + 45deg);
+
+        div.content {
+          background-color: aqua;
+        }
+      }
+
+      &.sec-3 {
+        z-index: 4;
+        transform: rotate(216deg + 45deg);
+
+        div.content {
+          background-color: antiquewhite;
+        }
+      }
+
+      &.sec-4 {
+        z-index: 5;
+        transform: rotate(288deg + 45deg);
+
+        div.content {
+          background-color: blueviolet;
+        }
+      }
+
+      &.sec-5.plus {
+        z-index: 6;
+        transform: rotate(45deg);
+
+        div.p-relative {
+          div.content {
+            width: 100px;
+            height: 31px;
+            background-color: red;
+            bottom: 0;
+            border-radius: 0 31px 0 0;
+          }
+        }
+      }
+    }
+
+    &.spinning {
+      animation-name: spin;
+      animation-duration: 2s;
+      animation-timing-function: ease-out;
+      transform: rotate(864deg);
+    }
+  }
+
+  button {
+    margin-top: 24px;
+  }
+}
