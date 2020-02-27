@@ -17,23 +17,25 @@ code {
     transform: rotate(0);
   }
   to {
-    transform: rotate(864deg);
+    transform: rotate(60deg * 15);
   }
 }
 
 div.App {
+  /*padding: 100px 0;
+  background: #61dafb;
   div.container {
-    margin: 200px auto 0;
-    width: 200px;
-    height: 200px;
+    margin: 0 auto;
+    width: 600px;
+    height: 600px;
     border: solid 1px black;
-    border-radius: 100px;
+    border-radius: 300px;
     overflow: hidden;
     position: relative;
 
     & > div[class*="sec"] {
-      width: 200px;
-      height: 200px;
+      width: 600px;
+      height: 600px;
       position: absolute;
       background-color: transparent;
       left: 0;
@@ -41,15 +43,15 @@ div.App {
 
       div.p-relative {
         position: relative;
-        width: 100px;
-        height: 100px;
+        width: 300px;
+        height: 300px;
         top: 0;
         left: 0;
 
         div.content {
           content: "";
-          width: 100px;
-          height: 100px;
+          width: 300px;
+          height: 300px;
           position: absolute;
           display: flex;
           flex-direction: column;
@@ -59,61 +61,55 @@ div.App {
 
       &.sec-0 {
         z-index: 1;
-        transform: rotate(45deg);
+        transform: rotate(30deg);
 
         div.content {
-          background-color: red;
+          background-color: black;
         }
       }
 
       &.sec-1 {
         z-index: 2;
-        transform: rotate(72deg + 45deg);
+        transform: rotate(60deg * 1);
 
         div.content {
-          background-color: yellow;
+          background-color: white;
         }
       }
 
       &.sec-2 {
         z-index: 3;
-        transform: rotate(144deg + 45deg);
+        transform: rotate(60deg * 2);
 
         div.content {
-          background-color: aqua;
+          background-color: black;
         }
       }
 
       &.sec-3 {
         z-index: 4;
-        transform: rotate(216deg + 45deg);
+        transform: rotate(60deg * 3);
 
         div.content {
-          background-color: antiquewhite;
+          background-color: white;
         }
       }
 
       &.sec-4 {
         z-index: 5;
-        transform: rotate(288deg + 45deg);
+        transform: rotate(60deg * 4);
 
         div.content {
-          background-color: blueviolet;
+          background-color: black;
         }
       }
 
-      &.sec-5.plus {
+      &.sec-5 {
         z-index: 6;
-        transform: rotate(45deg);
+        transform: rotate(60deg * 5);
 
-        div.p-relative {
-          div.content {
-            width: 100px;
-            height: 31px;
-            background-color: red;
-            bottom: 0;
-            border-radius: 0 31px 0 0;
-          }
+        div.content {
+          background-color: transparent;
         }
       }
     }
@@ -122,11 +118,55 @@ div.App {
       animation-name: spin;
       animation-duration: 2s;
       animation-timing-function: ease-out;
-      transform: rotate(864deg);
     }
   }
 
   button {
     margin-top: 24px;
+  }*/
+
+  background-color: #E1E1E1;
+
+  div.svg {
+    margin: 0 auto;
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 300px;
+    position: relative;
+    z-index: 1;
+
+    & > svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    & > div.content {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 600px;
+      height: 600px;
+
+      & > div {
+        position: absolute;
+        top: 150px;
+        min-width: 600px;
+        min-height: 300px;
+        border: dashed 1px red;
+        z-index: 2;
+        transform: rotate(30deg);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+
+        p {
+          width: 50%;
+          text-align: center;
+        }
+      }
+    }
   }
 }
