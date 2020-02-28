@@ -3,68 +3,47 @@ import React, {useState} from 'react';
 import './App.css';
 
 function App() {
-    const [spin, setSpin] = useState(false);
+    const d = 600;  // Đường kính
+    const data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
     return (
         <div className="App">
-            {/*<div className={`container${spin ? ' spinning' : ''}`}>
-                <div className="sec-0">
-                    <div className="p-relative">
-                        <div className="content">a</div>
-                    </div>
-                </div>
-                <div className="sec-1">
-                    <div className="p-relative">
-                        <div className="content">b</div>
-                    </div>
-                </div>
-                <div className="sec-2">
-                    <div className="p-relative">
-                        <div className="content">c</div>
-                    </div>
-                </div>
-                <div className="sec-3">
-                    <div className="p-relative">
-                        <div className="content">d</div>
-                    </div>
-                </div>
-                <div className="sec-4">
-                    <div className="p-relative">
-                        <div className="content">e</div>
-                    </div>
-                </div>
-                <div className="sec-5">
-                    <div className="p-relative">
-                        <div className="content">f</div>
-                    </div>
-                </div>
-            </div>
-            <button onClick={() => {
-                spin && setSpin(false);
-                setTimeout(() => setSpin(true));
-                setTimeout(() => setSpin(false), 2000);
-            }}>Quay
-            </button>*/}
             <div className="svg">
-                {[0, 1, 2, 3, 4, 5].map((value, index) =>
-                    <svg key={index}
-                         width={600}
-                         height={600}
-                         viewBox={'0 0 600 600'}
-                         style={{transform: `rotate(${(360 / 6) * value}deg)`}}>
+                {data.map((value, index) => {
+                    // Chi vi hinh tron> C = d.pi or 2r * pi
+                    const circumference: number = (d / 2) * Math.PI;
+                    return <svg key={index}
+                                width={d}
+                                height={d}
+                                viewBox={`0 0 ${d} ${d}`}
+                                style={{transform: `rotate(${(360 / data.length) * index}deg)`}}>
                         <g>
-                            <circle r={150} cx={300} cy={300}
+                            <circle r={d / 4} cx={d / 2} cy={d / 2}
                                     fill="transparent"
                                     stroke={index % 2 === 0 ? 'white' : 'orange'}
-                                    strokeWidth={300}
-                                    strokeDasharray={'calc(16.66 * 942 / 100) 942'}>
+                                    strokeWidth={d / 2}
+                                    strokeDasharray={`calc(${100 / data.length} * ${circumference} / 100) ${circumference}`}>
                             </circle>
                         </g>
-                    </svg>)}
+                    </svg>;
+                })}
                 <div className='content'>
-                    <div>
-                        <p>value 0</p>
-                        <p>value 3</p>
-                    </div>
+                    {data.map((value, index) => {
+                        const temp: number = data.length / 2;
+                        const deg_avg = 360 / data.length;
+                        if (index < temp)
+                            return <div key={index}
+                                        style={{
+                                            minWidth: d + 'px',
+                                            minHeight: d / 2 + 'px',
+                                            top: d / 4 + 'px',
+                                            transform: `rotate(${index === 0 ? deg_avg / 2 : (deg_avg * index + (deg_avg / 2))}deg)`
+                                        }}>
+                                <p>value {data[index]}</p>
+                                <p>value {data[index + temp]}</p>
+                            </div>;
+                        else return null;
+                    })}
                 </div>
             </div>
         </div>

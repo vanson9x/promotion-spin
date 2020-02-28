@@ -22,109 +22,6 @@ code {
 }
 
 div.App {
-  /*padding: 100px 0;
-  background: #61dafb;
-  div.container {
-    margin: 0 auto;
-    width: 600px;
-    height: 600px;
-    border: solid 1px black;
-    border-radius: 300px;
-    overflow: hidden;
-    position: relative;
-
-    & > div[class*="sec"] {
-      width: 600px;
-      height: 600px;
-      position: absolute;
-      background-color: transparent;
-      left: 0;
-      top: 0;
-
-      div.p-relative {
-        position: relative;
-        width: 300px;
-        height: 300px;
-        top: 0;
-        left: 0;
-
-        div.content {
-          content: "";
-          width: 300px;
-          height: 300px;
-          position: absolute;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-      }
-
-      &.sec-0 {
-        z-index: 1;
-        transform: rotate(30deg);
-
-        div.content {
-          background-color: black;
-        }
-      }
-
-      &.sec-1 {
-        z-index: 2;
-        transform: rotate(60deg * 1);
-
-        div.content {
-          background-color: white;
-        }
-      }
-
-      &.sec-2 {
-        z-index: 3;
-        transform: rotate(60deg * 2);
-
-        div.content {
-          background-color: black;
-        }
-      }
-
-      &.sec-3 {
-        z-index: 4;
-        transform: rotate(60deg * 3);
-
-        div.content {
-          background-color: white;
-        }
-      }
-
-      &.sec-4 {
-        z-index: 5;
-        transform: rotate(60deg * 4);
-
-        div.content {
-          background-color: black;
-        }
-      }
-
-      &.sec-5 {
-        z-index: 6;
-        transform: rotate(60deg * 5);
-
-        div.content {
-          background-color: transparent;
-        }
-      }
-    }
-
-    &.spinning {
-      animation-name: spin;
-      animation-duration: 2s;
-      animation-timing-function: ease-out;
-    }
-  }
-
-  button {
-    margin-top: 24px;
-  }*/
-
   background-color: #E1E1E1;
 
   div.svg {
@@ -151,17 +48,10 @@ div.App {
 
       & > div {
         position: absolute;
-        top: 150px;
-        min-width: 600px;
-        min-height: 300px;
-        border: dashed 1px red;
-        z-index: 2;
-        transform: rotate(30deg);
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-direction: row-reverse;
-
         p {
           width: 50%;
           text-align: center;
